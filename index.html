@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AstraWatch - NASA APOD Dashboard</title>
+</head>
+
+<body>
+  <div class="dashboard-container">
+
+    <!-- Top Widget: Clock and Google Search Bar -->
+    <div class="top-row">
+      <div class="clock-box">
+        <div id="clock">00:00:00</div>
+        <div id="date">Loading date...</div>
+      </div>
+
+      <div class="search-box">
+        <form id="search-form" action="https://www.google.com/search" method="get" target="_blank">
+          <div class="google-search-container">
+            <svg class="google-logo" width="20" height="20" viewBox="0 0 24 24"></svg>
+            <path fill="#4285F4"
+              d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z" />
+            <path fill="#34A853"
+              d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.13 0-5.78-2.11-6.73-4.96H1.18v3.15C3.17 21.32 7.23 24 12 24z" />
+            <path fill="#FBBC05"
+              d="M5.27 14.24c-.25-.72-.38-1.49-.38-2.24s.13-1.52.38-2.24V6.61H1.18C.43 8.13 0 9.87 0 12s.43 3.87 1.18 5.39l4.09-3.15z" />
+            <path fill="#EA4335"
+              d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.23 0 3.17 2.68 1.18 6.61l4.09 3.15c.95-2.85 3.6-4.96 6.73-4.96z" />
+            </svg>
+            <input type="text" name="q" id="search-input" placeholder="Search Google..." autocomplete="off">
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Middle Row: NASA APOD Telemetry, Quick Access, Mission Log -->
+    <div class="grid-row">
+      <!-- NASA APOD Card -->
+      <div class="card" id="nasa-card">
+        <h3>🚀 NASA APOD Telemetry</h3>
+        <div id="nasa-content">
+          <p>Loading...</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>🚀 Quick Access</h3>
+        <div class="quick-links">
+          <a href="https://github.com" target="_blank">My GitHub</a>
+          <a href="https://youtube.com" target="_blank">YouTube</a>
+          <a href="https://wikipedia.org" target="_blank">Wikipedia</a>
+          <a href="https://chatgpt.com" target="_blank">ChatGPT</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>🛰️ Mission Log</h3>
+        <p class="quote">"The Earth is the cradle of humanity, but mankind cannot stay in the cradle forever." — K.
+          Tsiolkovsky</p>
+      </div>
+    </div>
+
+    <!-- Bottom Row: Date Picker Control -->
+    <div class="control-row">
+      <label for="date-picker">Select NASA Date: </label>
+      <input type="date" id="date-picker">
+    </div>
+
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>

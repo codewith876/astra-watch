@@ -1,0 +1,265 @@
+/* Google Fonts Imported from Guide */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700&family=Black+Ops+One&display=swap');
+
+/* Base Body Styling with Guide's Background Setup */
+body {
+  font-family: 'Black Ops One', system-ui, -apple-system, sans-serif;
+  background-color: #0b0f19;
+  color: #f8fafc;
+  margin: 0;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  box-sizing: border-box;
+}
+
+/* Guide's Pseudo-Elements for Side Zigzag Decorations */
+body::before,
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  width: 50px;
+  height: 100%;
+  background: #c084fc;
+  z-index: -1;
+}
+
+body::before {
+  left: 0;
+  clip-path: polygon(0% 0%, 100% 0%,
+      85% 2.5%, 100% 5%,
+      85% 7.5%, 100% 10%,
+      85% 12.5%, 100% 15%,
+      85% 17.5%, 100% 20%,
+      85% 22.5%, 100% 25%,
+      85% 27.5%, 100% 30%,
+      85% 32.5%, 100% 35%,
+      85% 37.5%, 100% 40%,
+      85% 42.5%, 100% 45%,
+      85% 47.5%, 100% 50%,
+      85% 52.5%, 100% 55%,
+      85% 57.5%, 100% 60%,
+      85% 62.5%, 100% 65%,
+      85% 67.5%, 100% 70%,
+      85% 72.5%, 100% 75%,
+      85% 77.5%, 100% 80%,
+      85% 82.5%, 100% 85%,
+      85% 87.5%, 100% 90%,
+      85% 92.5%, 100% 95%,
+      85% 97.5%, 100% 100%,
+      0% 100%);
+}
+
+body::after {
+  right: 0;
+  clip-path: polygon(0% 0%, 100% 0%,
+      100% 100%,
+      15% 100%,
+      0% 97.5%, 15% 95%,
+      0% 92.5%, 15% 90%,
+      0% 87.5%, 15% 85%,
+      0% 82.5%, 15% 80%,
+      0% 77.5%, 15% 75%,
+      0% 72.5%, 15% 70%,
+      0% 67.5%, 15% 65%,
+      0% 62.5%, 15% 60%,
+      0% 57.5%, 15% 55%,
+      0% 52.5%, 15% 50%,
+      0% 47.5%, 15% 45%,
+      0% 42.5%, 15% 40%,
+      0% 37.5%, 15% 35%,
+      0% 32.5%, 15% 30%,
+      0% 27.5%, 15% 25%,
+      0% 22.5%, 15% 20%,
+      0% 17.5%, 15% 15%,
+      0% 12.5%, 15% 10%,
+      0% 7.5%, 15% 5%,
+      0% 2.5%);
+}
+
+/* Typography Overrides using Guide's Google Fonts */
+h1,
+h2,
+h3,
+h4,
+#clock {
+  font-family: 'Orbitron', sans-serif !important;
+}
+
+/* Dashboard Layout Structure */
+.dashboard-container {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.top-row,
+.grid-row,
+.control-row {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.top-row,
+.control-row {
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.25rem 1.5rem;
+  border-radius: 16px;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.control-row {
+  justify-content: center;
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+
+#date-picker {
+  background: rgba(15, 23, 42, 0.95);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  color: #fff;
+  padding: 0.35rem 0.75rem;
+  border-radius: 8px;
+  outline: none;
+}
+
+.clock-box #clock {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #38bdf8;
+}
+
+.clock-box #date {
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+/* Google Search Container Styling */
+.google-search-container {
+  display: flex;
+  align-items: center;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 30px;
+  padding: 0.5rem 1.25rem;
+  width: 280px;
+  transition: all 0.3s ease;
+}
+
+.google-search-container:focus-within {
+  border-color: #38bdf8;
+  width: 320px;
+}
+
+.google-logo {
+  width: 20px !important;
+  height: 20px !important;
+  min-width: 20px !important;
+  min-height: 20px !important;
+  max-width: 20px !important;
+  max-height: 20px !important;
+  margin-right: 0.75rem !important;
+  flex-shrink: 0 !important;
+  display: block !important;
+}
+
+#search-input {
+  background: transparent !important;
+  border: none !important;
+  color: #fff !important;
+  font-size: 0.9rem;
+  outline: none !important;
+  width: 100%;
+  padding: 0;
+}
+
+#search-input::placeholder {
+  color: #94a3b8 !important;
+}
+
+/* Grid & Cards */
+.grid-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.card {
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 1.25rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+}
+
+.card h3 {
+  margin-top: 0;
+  font-size: 1rem;
+  color: #38bdf8;
+  margin-bottom: 0.75rem;
+}
+
+#nasa-content img,
+#nasa-content video,
+#nasa-content iframe {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+#nasa-content p {
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: #94a3b8;
+  margin: 0;
+}
+
+#nasa-content h4 {
+  font-size: 0.9rem;
+  margin: 0 0 0.5rem 0;
+  color: #fff;
+}
+
+.quick-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.quick-links a {
+  color: #c084fc;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.quick-links a:hover {
+  text-decoration: underline;
+}
+
+.quote {
+  font-style: italic;
+  font-size: 0.85rem;
+  color: #94a3b8;
+  line-height: 1.5;
+}
+
+/* Guide's Responsive Media Query for Small Screens */
+@media (max-width: 600px) {
+
+  body::before,
+  body::after {
+    display: none;
+  }
+}
